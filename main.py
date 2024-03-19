@@ -2,7 +2,7 @@ def main():
     num_words = get_num_words()
     num_chars = get_chars()
     print(f"{"START":=^50}")
-    print(f"WORD COUNTER:\n{num_words} has been found in the document\nCHARS SORT:")
+    print(f"WORD COUNTER:\n{num_words} words has been found in the document\nCHARS SORT:")
     sorted_chars = chars_dict_to_sorted_list(num_chars)
     for dict in sorted_chars:
         num = dict["num"]
