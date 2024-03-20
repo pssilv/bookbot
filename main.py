@@ -5,10 +5,9 @@ def main():
     print(f"WORD COUNTER:\n{num_words} words has been found in the document\nCHARS SORT:")
     sorted_chars = get_sorted(num_chars)
     for dict in sorted_chars:
-        num = dict["num"]
         char = dict["char"]
-        print(f"the {char} character was found {num} times")
-
+        num = dict["num"]
+        print(f"{char} was found {num} times")
     print(f"{"END":=^50}")
 
 def get_book_text():
@@ -39,10 +38,11 @@ def sort_on(dict):
 
 def get_sorted(dict):
     sorted_list = []
-    for char in dict:
-        if char.isalpha():
-            sorted_list.append({"char": char, "num": dict[char]})
+    for key in dict:
+        if key.isalpha():
+            sorted_list.append({"char": key, "num": dict[key]})
     sorted_list.sort(reverse=True, key=sort_on)
     return sorted_list
+
 
 main()
