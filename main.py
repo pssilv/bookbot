@@ -1,14 +1,17 @@
 def main():
     num_words = get_num_words()
     num_chars = get_chars()
+    num_letters = get_letters()
     print(f"{"START":=^50}")
-    print(f"WORD COUNTER:\n{num_words} words has been found in the document\nCHARS SORT:")
+    print(f"WORD COUNTER:\n{num_words} words has been found in the document")
+    print(f"CHAR COUNTER:\n{num_letters} chars has been found in the document\nMOST COMMON CHARS:")
     sorted_chars = get_sorted(num_chars)
     for dict in sorted_chars:
         char = dict["char"]
         num = dict["num"]
         print(f"{char} was found {num} times")
     print(f"{"END":=^50}")
+
 
 def get_book_text():
     book_path = "books/frankenstein.txt"
@@ -44,5 +47,16 @@ def get_sorted(dict):
     sorted_list.sort(reverse=True, key=sort_on)
     return sorted_list
 
+def get_letters():
+    total_letters = 0
+    text = get_book_text()
+    for letter in text:
+        total_letters += 1
+    return total_letters
 
+def reverse_book():
+    text = get_book_text()
+    reversed_text = ""
+    reversed_text += text[-1:0:-1]
+    return reversed_text
 main()
