@@ -1,1 +1,1 @@
-Added a char counter and a function to reverse the text(I should have done a function to convert the text to uppercase instead).
+Added a function to get the longest word and another function to count specific words and return a dictionary.
